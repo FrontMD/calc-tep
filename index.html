@@ -18,60 +18,84 @@
 
 <body>
     <main>
-        <div class="printContainerDesk containerStyle">
-            <section class='calculator' data-js="calculator">
-                <div class='container'>
 
-                    <form action="" noValidate class='calculatorForm' data-js="calculatorForm">
-                        <div class='formFieldSet'>
-                            <p class='formSubtitle1'>
-                                Укажите данные для просчета
-                            </p>
-                            <div class='formField'>
-                                <label for="exchangeRatesRubCny">
-                                    Курс рубля к ЮАНЬ
-                                </label>
-                                <input type="input" id="exchangeRatesRubCny" value=''
-                                    onchange='inputChangeHandler("float", event)'
-                                    oninput='inputChangeHandler("float", event)'
-                                    onfocus='inputFocusHandler("float", event)'
-                                    onblur='inputBlurHandler("float", event)' maxLength='6' class='inputAndSelect' />
+        <section class='calculator' data-js="calculator">
+            <div class='container'>
 
-                                <div class='inputControls'>
-                                    <div class='inputControl' onclick='inputControlHandler("up","fraction",event,this)'>
-                                        <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
-                                        </svg>
-                                    </div>
-                                    <div class='inputControl'
-                                        onclick='inputControlHandler("down","fraction",event,this)'>
-                                        <svg style='transform: rotate(180deg)' , width="100%" height="100%"
-                                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
-                                        </svg>
-                                    </div>
+                <form action="" noValidate class='calculatorForm' data-js="calculatorForm">
+                    <div class='formFieldSet'>
+                        <p class='formSubtitle1'>
+                            Укажите данные для просчета
+                        </p>
+                        <div class='formField'>
+                            <label for="exchangeRatesRubCny">
+                                Курс рубля к ЮАНЬ
+                            </label>
+                            <input type="input" id="exchangeRatesRubCny" value=''
+                                onchange='inputChangeHandler("float", event)'
+                                oninput='inputChangeHandler("float", event)' onfocus='inputFocusHandler("float", event)'
+                                onblur='inputBlurHandler("float", event)' maxLength='6' class='inputAndSelect' />
+
+                            <div class='inputControls'>
+                                <div class='inputControl' onclick='inputControlHandler("up","fraction",event,this)'>
+                                    <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
+                                <div class='inputControl' onclick='inputControlHandler("down","fraction",event,this)'>
+                                    <svg style='transform: rotate(180deg)' , width="100%" height="100%"
+                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class='selectWrap formField'>
-                                <label for="nominalElectricalPower">
-                                    Номин. эл. мощность ГПУ
-                                </label>
-                                <select name="" id="nominalElectricalPower" value=''
-                                    onchange='inputChangeHandler("", event)' oninput='inputChangeHandler("", event)'
-                                    onfocus='inputFocusHandler("", event)' onblur='inputBlurHandler("", event)'
-                                    class='inputAndSelect'>
-                                    <option value="1100">1100 кВт</option>
-                                    <option value="1500">1500 кВт</option>
-                                    <option value="2000">2000 кВт</option>
-                                </select>
+                        <div class='selectWrap formField'>
+                            <label for="nominalElectricalPower">
+                                Номин. эл. мощность ГПУ
+                            </label>
+                            <select name="" id="nominalElectricalPower" value=''
+                                onchange='inputChangeHandler("", event)' oninput='inputChangeHandler("", event)'
+                                onfocus='inputFocusHandler("", event)' onblur='inputBlurHandler("", event)'
+                                class='inputAndSelect'>
+                                <option value="1100">1100 кВт</option>
+                                <option value="1500">1500 кВт</option>
+                                <option value="2000">2000 кВт</option>
+                            </select>
 
-                                <div class='selectArrow'>
+                            <div class='selectArrow'>
+                                <svg style='transform: rotate(180deg)' width="100%" height="100%" viewBox="0 0 16 16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" clipRule="evenodd"
+                                        d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                        fill="black" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class='formField'>
+                            <label for="amount">
+                                Количество ГПУ
+                            </label>
+                            <input type="input" id="amount" value='' onchange='inputChangeHandler("int", event)'
+                                oninput='inputChangeHandler("int", event)' onfocus='inputFocusHandler("int", event)'
+                                onblur='inputBlurHandler("int", event)' maxLength='6' class='inputAndSelect' />
+                            <div class='inputControls'>
+                                <div class='inputControl' onclick='inputControlHandler("up","number",event,this)'>
+                                    <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
+                                <div class='inputControl' onclick='inputControlHandler("down","number",event,this)'>
                                     <svg style='transform: rotate(180deg)' width="100%" height="100%"
                                         viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fillRule="evenodd" clipRule="evenodd"
@@ -80,305 +104,266 @@
                                     </svg>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class='formField'>
-                                <label for="amount">
-                                    Количество ГПУ
-                                </label>
-                                <input type="input" id="amount" value='' onchange='inputChangeHandler("int", event)'
-                                    oninput='inputChangeHandler("int", event)' onfocus='inputFocusHandler("int", event)'
-                                    onblur='inputBlurHandler("int", event)' maxLength='6' class='inputAndSelect' />
-                                <div class='inputControls'>
-                                    <div class='inputControl' onclick='inputControlHandler("up","number",event,this)'>
-                                        <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
+                    <div class='formField'>
+                        <p style='padding: 0; margin: 0;'>
+                            Выберите исполнение
+                        </p>
+                        <div class='radioList'>
+                            <label class='radioImageItem'>
+                                <input class='hideRadioInput' type="radio" name="execution" value="open" checked
+                                    data-js="exacutionRadio" />
+                                <span class='radioImgBlock'>
+                                    <span class='radioBg'>
+                                        <svg width="100%" height="100%" viewBox="0 0 135 152" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
+                                            <path
+                                                d="M67.5126 0C45.0168 13.3147 22.5084 26.6294 0 39.9314V110.273C22.5084 123.916 45.0168 137.572 67.5126 151.216C90.0084 137.572 112.504 123.916 135 110.273V39.9314C112.504 26.6294 90.0084 13.3147 67.5126 0Z"
+                                                fill="#005CA9" />
                                         </svg>
-                                    </div>
-                                    <div class='inputControl' onclick='inputControlHandler("down","number",event,this)'>
-                                        <svg style='transform: rotate(180deg)' width="100%" height="100%"
-                                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
+                                    </span>
+                                    <span class='radioImage'>
+                                        <img src="img/6RUdVIMGApPqdxoyAhQHpQ0bYA.png" />
+                                    </span>
+                                </span>
+                                <span class='radioName'>
+                                    Открытое
+                                </span>
+                            </label>
+                            <label class='radioImageItem'>
+                                <input class='hideRadioInput' type="radio" name="execution" value="container"
+                                    data-js="exacutionRadio" />
+                                <span class='radioImgBlock'>
+                                    <span class='radioBg'>
+                                        <svg width="100%" height="100%" viewBox="0 0 135 152" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M67.5126 0C45.0168 13.3147 22.5084 26.6294 0 39.9314V110.273C22.5084 123.916 45.0168 137.572 67.5126 151.216C90.0084 137.572 112.504 123.916 135 110.273V39.9314C112.504 26.6294 90.0084 13.3147 67.5126 0Z"
+                                                fill="#005CA9" />
                                         </svg>
-                                    </div>
+                                    </span>
+                                    <span class='radioImage'>
+                                        <img src="img/z6IrKT2OztyUAUVHo86NwlKJgPQ.png" />
+                                    </span>
+                                </span>
+                                <span class='radioName'>
+                                    Контейнерное без утилизации тепла
+                                </span>
+                            </label>
+                            <label class='radioImageItem'>
+                                <input class='hideRadioInput' type="radio" name="execution"
+                                    value="containerHeatRecovery" data-js="exacutionRadio" />
+                                <span class='radioImgBlock'>
+                                    <span class='radioBg'>
+                                        <svg width="100%" height="100%" viewBox="0 0 135 152" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M67.5126 0C45.0168 13.3147 22.5084 26.6294 0 39.9314V110.273C22.5084 123.916 45.0168 137.572 67.5126 151.216C90.0084 137.572 112.504 123.916 135 110.273V39.9314C112.504 26.6294 90.0084 13.3147 67.5126 0Z"
+                                                fill="#005CA9" />
+                                        </svg>
+                                    </span>
+                                    <span class='radioImage'>
+                                        <img src="img/ONUjdy9kIidrgP2yx2lx1GMygQ.png" />
+                                    </span>
+                                </span>
+                                <span class='radioName'>
+                                    Контейнерное с утилизацией тепла
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class='formField hiddenBlock' data-js="heatRecoveryEl">
+                        <p style='padding: 0; margin: 0;'>
+                            Выберите период использование тепловой
+                            энергии ГПУ
+                        </p>
+                        <div class='radioListBtns'>
+                            <label class='radioBtnItem'>
+                                <input class='hideRadioInput' type="radio" name="useThermalEnergy" value="allEYear"
+                                    data-js="useThermalRadio" />
+                                <span class='radioBtn'>
+                                    Круглый год
+                                </span>
+                            </label>
+                            <label class='radioBtnItem'>
+                                <input class='hideRadioInput' type="radio" checked name="useThermalEnergy"
+                                    value="heatingSeason" data-js="useThermalRadio" />
+                                <span class='radioBtn'>
+                                    Отопительный сезон
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class='formFieldSet'>
+                        <div class='formField'>
+                            <label for="gasPrice">
+                                Стоимость 1 нм3 газа, руб. без НДС
+                            </label>
+                            <input type="input" id="gasPrice" value='' onchange='inputChangeHandler("float", event)'
+                                oninput='inputChangeHandler("float", event)' onfocus='inputFocusHandler("float", event)'
+                                onblur='inputBlurHandler("float", event)' maxLength='6' class='inputAndSelect' />
+                            <div class='inputControls'>
+                                <div class='inputControl' onclick='inputControlHandler("up", "number", event, this)'>
+                                    <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
+                                <div class='inputControl' onclick='inputControlHandler("down", "number", event, this)'>
+                                    <svg style='transform: rotate(180deg)' width="100%" height="100%"
+                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
 
                         <div class='formField'>
-                            <p style='padding: 0; margin: 0;'>
-                                Выберите исполнение
-                            </p>
-                            <div class='radioList'>
-                                <label class='radioImageItem'>
-                                    <input class='hideRadioInput' type="radio" name="execution" value="open" checked
-                                        data-js="exacutionRadio" />
-                                    <span class='radioImgBlock'>
-                                        <span class='radioBg'>
-                                            <svg width="100%" height="100%" viewBox="0 0 135 152" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M67.5126 0C45.0168 13.3147 22.5084 26.6294 0 39.9314V110.273C22.5084 123.916 45.0168 137.572 67.5126 151.216C90.0084 137.572 112.504 123.916 135 110.273V39.9314C112.504 26.6294 90.0084 13.3147 67.5126 0Z"
-                                                    fill="#005CA9" />
-                                            </svg>
-                                        </span>
-                                        <span class='radioImage'>
-                                            <img src="img/6RUdVIMGApPqdxoyAhQHpQ0bYA.png" />
-                                        </span>
-                                    </span>
-                                    <span class='radioName'>
-                                        Открытое
-                                    </span>
-                                </label>
-                                <label class='radioImageItem'>
-                                    <input class='hideRadioInput' type="radio" name="execution" value="container"
-                                        data-js="exacutionRadio" />
-                                    <span class='radioImgBlock'>
-                                        <span class='radioBg'>
-                                            <svg width="100%" height="100%" viewBox="0 0 135 152" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M67.5126 0C45.0168 13.3147 22.5084 26.6294 0 39.9314V110.273C22.5084 123.916 45.0168 137.572 67.5126 151.216C90.0084 137.572 112.504 123.916 135 110.273V39.9314C112.504 26.6294 90.0084 13.3147 67.5126 0Z"
-                                                    fill="#005CA9" />
-                                            </svg>
-                                        </span>
-                                        <span class='radioImage'>
-                                            <img src="img/z6IrKT2OztyUAUVHo86NwlKJgPQ.png" />
-                                        </span>
-                                    </span>
-                                    <span class='radioName'>
-                                        Контейнерное без утилизации тепла
-                                    </span>
-                                </label>
-                                <label class='radioImageItem'>
-                                    <input class='hideRadioInput' type="radio" name="execution"
-                                        value="containerHeatRecovery" data-js="exacutionRadio" />
-                                    <span class='radioImgBlock'>
-                                        <span class='radioBg'>
-                                            <svg width="100%" height="100%" viewBox="0 0 135 152" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M67.5126 0C45.0168 13.3147 22.5084 26.6294 0 39.9314V110.273C22.5084 123.916 45.0168 137.572 67.5126 151.216C90.0084 137.572 112.504 123.916 135 110.273V39.9314C112.504 26.6294 90.0084 13.3147 67.5126 0Z"
-                                                    fill="#005CA9" />
-                                            </svg>
-                                        </span>
-                                        <span class='radioImage'>
-                                            <img src="img/ONUjdy9kIidrgP2yx2lx1GMygQ.png" />
-                                        </span>
-                                    </span>
-                                    <span class='radioName'>
-                                        Контейнерное с утилизацией тепла
-                                    </span>
-                                </label>
+                            <label for="priceElectricity">
+                                Стоимость 1 кВт э/э, руб. без НДС
+                            </label>
+                            <input type="input" id="priceElectricity" value=''
+                                onchange='inputChangeHandler("float", event)'
+                                oninput='inputChangeHandler("float", event)' onfocus='inputFocusHandler("float", event)'
+                                onblur='inputBlurHandler("float", event)' maxLength='6' class='inputAndSelect' />
+                            <div class='inputControls'>
+                                <div class='inputControl' onclick='inputControlHandler("up","number",event,this)'>
+                                    <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
+                                <div class='inputControl' onclick='inputControlHandler("down","number",event,this)'>
+                                    <svg style='transform: rotate(180deg)' width="100%" height="100%"
+                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
                         <div class='formField hiddenBlock' data-js="heatRecoveryEl">
-                            <p style='padding: 0; margin: 0;'>
-                                Выберите период использование тепловой
-                                энергии ГПУ
-                            </p>
-                            <div class='radioListBtns'>
-                                <label class='radioBtnItem'>
-                                    <input class='hideRadioInput' type="radio" name="useThermalEnergy" value="allEYear"
-                                        data-js="useThermalRadio" />
-                                    <span class='radioBtn'>
-                                        Круглый год
-                                    </span>
-                                </label>
-                                <label class='radioBtnItem'>
-                                    <input class='hideRadioInput' type="radio" checked name="useThermalEnergy"
-                                        value="heatingSeason" data-js="useThermalRadio" />
-                                    <span class='radioBtn'>
-                                        Отопительный сезон
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class='formFieldSet'>
-                            <div class='formField'>
-                                <label for="gasPrice">
-                                    Стоимость 1 нм3 газа, руб. без НДС
-                                </label>
-                                <input type="input" id="gasPrice" value='' onchange='inputChangeHandler("float", event)'
-                                    oninput='inputChangeHandler("float", event)'
-                                    onfocus='inputFocusHandler("float", event)'
-                                    onblur='inputBlurHandler("float", event)' maxLength='6' class='inputAndSelect' />
-                                <div class='inputControls'>
-                                    <div class='inputControl'
-                                        onclick='inputControlHandler("up", "number", event, this)'>
-                                        <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
-                                        </svg>
-                                    </div>
-                                    <div class='inputControl'
-                                        onclick='inputControlHandler("down", "number", event, this)'>
-                                        <svg style='transform: rotate(180deg)' width="100%" height="100%"
-                                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
-                                        </svg>
-                                    </div>
+                            <label for="priceThermalEnergy">
+                                Стоимость 1 Гкал т/э, руб. без НДС
+                            </label>
+                            <input type="input" id="priceThermalEnergy" value=''
+                                onchange='inputChangeHandler("float", event)'
+                                oninput='inputChangeHandler("float", event)' onfocus='inputFocusHandler("float", event)'
+                                onblur='inputBlurHandler("float", event)' maxLength='6' class='inputAndSelect' />
+                            <div class='inputControls'>
+                                <div class='inputControl' onclick='inputControlHandler("up","number",event,this)'>
+                                    <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
                                 </div>
-                            </div>
-
-                            <div class='formField'>
-                                <label for="priceElectricity">
-                                    Стоимость 1 кВт э/э, руб. без НДС
-                                </label>
-                                <input type="input" id="priceElectricity" value=''
-                                    onchange='inputChangeHandler("float", event)'
-                                    oninput='inputChangeHandler("float", event)'
-                                    onfocus='inputFocusHandler("float", event)'
-                                    onblur='inputBlurHandler("float", event)' maxLength='6' class='inputAndSelect' />
-                                <div class='inputControls'>
-                                    <div class='inputControl' onclick='inputControlHandler("up","number",event,this)'>
-                                        <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
-                                        </svg>
-                                    </div>
-                                    <div class='inputControl' onclick='inputControlHandler("down","number",event,this)'>
-                                        <svg style='transform: rotate(180deg)' width="100%" height="100%"
-                                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class='formField hiddenBlock' data-js="heatRecoveryEl">
-                                <label for="priceThermalEnergy">
-                                    Стоимость 1 Гкал т/э, руб. без НДС
-                                </label>
-                                <input type="input" id="priceThermalEnergy" value=''
-                                    onchange='inputChangeHandler("float", event)'
-                                    oninput='inputChangeHandler("float", event)'
-                                    onfocus='inputFocusHandler("float", event)'
-                                    onblur='inputBlurHandler("float", event)' maxLength='6' class='inputAndSelect' />
-                                <div class='inputControls'>
-                                    <div class='inputControl' onclick='inputControlHandler("up","number",event,this)'>
-                                        <svg width="100%" height="100%" viewBox="0 0 16 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
-                                        </svg>
-                                    </div>
-                                    <div class='inputControl' onclick='inputControlHandler("down","number",event,this)'>
-                                        <svg style='transform: rotate(180deg)' width="100%" height="100%"
-                                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" clipRule="evenodd"
-                                                d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
-                                                fill="black" />
-                                        </svg>
-                                    </div>
+                                <div class='inputControl' onclick='inputControlHandler("down","number",event,this)'>
+                                    <svg style='transform: rotate(180deg)' width="100%" height="100%"
+                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M14.0104 9.98959L8 3.97918L1.98959 9.98959L2.6967 10.6967L8 5.3934L13.3033 10.6967L14.0104 9.98959Z"
+                                            fill="black" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class='formFieldSetContacts'>
-                            <p class='formSubtitle2'>
-                                Ваши контактные данные
-                            </p>
-                            <div class='formField'>
-                                <label for="userName">Ваше имя</label>
-                                <input type="input" id="userName" value='' onchange='inputChangeHandler("name", event)'
-                                    oninput='inputChangeHandler("name", event)'
-                                    onfocus='inputFocusHandler("name", event)' onblur='inputBlurHandler("name", event)'
-                                    class='inputAndSelect' />
-                            </div>
+                    <div class='formFieldSetContacts'>
+                        <p class='formSubtitle2'>
+                            Ваши контактные данные
+                        </p>
+                        <div class='formField'>
+                            <label for="userName">Ваше имя</label>
+                            <input type="input" id="userName" value='' onchange='inputChangeHandler("name", event)'
+                                oninput='inputChangeHandler("name", event)' onfocus='inputFocusHandler("name", event)'
+                                onblur='inputBlurHandler("name", event)' class='inputAndSelect' />
+                        </div>
 
-                            <div class='formField'>
-                                <label for="companyName">
-                                    Название компании
-                                </label>
-                                <input type="input" id="companyName" value=''
-                                    onchange='inputChangeHandler("name", event)'
-                                    oninput='inputChangeHandler("name", event)'
-                                    onfocus='inputFocusHandler("name", event)' onblur='inputBlurHandler("name", event)'
-                                    class='inputAndSelect' />
-                            </div>
+                        <div class='formField'>
+                            <label for="companyName">
+                                Название компании
+                            </label>
+                            <input type="input" id="companyName" value='' onchange='inputChangeHandler("name", event)'
+                                oninput='inputChangeHandler("name", event)' onfocus='inputFocusHandler("name", event)'
+                                onblur='inputBlurHandler("name", event)' class='inputAndSelect' />
+                        </div>
 
-                            <div class='formField'>
-                                <label for="userPhone">
-                                    Ваш номер телефона
-                                </label>
-                                <input type="input" id="userPhone" value=''
-                                    onchange='inputChangeHandler("phone", event)'
-                                    oninput='inputChangeHandler("phone", event)'
-                                    onfocus='inputFocusHandler("phone", event)'
-                                    onblur='inputBlurHandler("phone", event)' placeholder="+7 (000) 000-00-00"
-                                    class='inputAndSelect' />
-                            </div>
+                        <div class='formField'>
+                            <label for="userPhone">
+                                Ваш номер телефона
+                            </label>
+                            <input type="input" id="userPhone" value='' onchange='inputChangeHandler("phone", event)'
+                                oninput='inputChangeHandler("phone", event)' onfocus='inputFocusHandler("phone", event)'
+                                onblur='inputBlurHandler("phone", event)' placeholder="+7 (000) 000-00-00"
+                                class='inputAndSelect' />
+                        </div>
 
-                            <div class='formField'>
-                                <label for="userEmail">Ваш email</label>
-                                <input type="input" id="userEmail" value=''
-                                    onchange='inputChangeHandler("email", event)'
-                                    oninput='inputChangeHandler("email", event)'
-                                    onfocus='inputFocusHandler("email", event)'
-                                    onblur='inputBlurHandler("email", event)' placeholder="mail@email.com"
-                                    class='inputAndSelect' />
-                            </div>
+                        <div class='formField'>
+                            <label for="userEmail">Ваш email</label>
+                            <input type="input" id="userEmail" value='' onchange='inputChangeHandler("email", event)'
+                                oninput='inputChangeHandler("email", event)' onfocus='inputFocusHandler("email", event)'
+                                onblur='inputBlurHandler("email", event)' placeholder="mail@email.com"
+                                class='inputAndSelect' />
+                        </div>
 
-                            <div class='formFieldTextarea'>
-                                <label for="userComment">
-                                    Дополнительный комментарий
-                                </label>
-                                <textarea id="userComment" value='' onchange='inputChangeHandler("", event)'
-                                    oninput='inputChangeHandler("", event)' onfocus='inputFocusHandler("", event)'
-                                    onblur='inputBlurHandler("", event)' placeholder="Ваш комментарий" rows="4"
-                                    class='textarea'></textarea>
-                            </div>
+                        <div class='formFieldTextarea'>
+                            <label for="userComment">
+                                Дополнительный комментарий
+                            </label>
+                            <textarea id="userComment" value='' onchange='inputChangeHandler("", event)'
+                                oninput='inputChangeHandler("", event)' onfocus='inputFocusHandler("", event)'
+                                onblur='inputBlurHandler("", event)' placeholder="Ваш комментарий" rows="4"
+                                class='textarea'></textarea>
+                        </div>
 
-                            <div class='checkboxPrivacy'>
-                                <label>
-                                    <input id="customPrivacyCheckbox" type="checkbox" value='privacyCheckbox'
-                                        class='checkboxPrivacyInputReal' />
-                                    <span class='checkboxPrivacyInput'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            class='checkboxPrivacyIcon'>
-                                            <path d="M 4 8 L 6.5 10.5 L 11.5 5.5" fill="transparent" strokeWidth="2"
-                                                stroke="rgb(255, 255, 255)" strokeLinecap="round"
-                                                strokeLinejoin="round">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </label>
-                                <span>
-                                    Подтверждаю согласие на обработку
-                                    персональных данных и что ознакомился с
-                                    <a href="/policy" class='checkboxPrivacyLink' onMouseEnter=' {(e)=>  {
+                        <div class='checkboxPrivacy'>
+                            <label>
+                                <input id="customPrivacyCheckbox" type="checkbox" value='privacyCheckbox'
+                                    class='checkboxPrivacyInputReal' />
+                                <span class='checkboxPrivacyInput'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        class='checkboxPrivacyIcon'>
+                                        <path d="M 4 8 L 6.5 10.5 L 11.5 5.5" fill="transparent" strokeWidth="2"
+                                            stroke="rgb(255, 255, 255)" strokeLinecap="round" strokeLinejoin="round">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </label>
+                            <span>
+                                Подтверждаю согласие на обработку
+                                персональных данных и что ознакомился с
+                                <a href="/policy" class='checkboxPrivacyLink' onMouseEnter=' {(e)=>  {
                                             e.target.style.color="rgb(161, 218, 248)" }}' onMouseLeave='{(e) =>  {
                                             e.target.style.color="rgb(0, 92, 169)" }}'>
-                                        &ensp;Политикой конфеденциальности
-                                    </a>
-                                </span>
-                            </div>
-
-                            <Button id="bf360_click_button_calculator" type="submit" class='calcBtn'>Рассчитать
-                                стоимость</Button>
+                                    &ensp;Политикой конфеденциальности
+                                </a>
+                            </span>
                         </div>
-                    </form>
 
-                    <div class="finalContainer hiddenBlock" data-js='finalContainer'></div>
-                </div>
-            </section>
-        </div>
+                        <Button type="submit" class='calcBtn'>Рассчитать
+                            стоимость</Button>
+                    </div>
+                </form>
+
+                <div class="finalContainer hiddenBlock" data-js='finalContainer'></div>
+            </div>
+        </section>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
     <script type='text/javascript' src='js/main.js'></script>

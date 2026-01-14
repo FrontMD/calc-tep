@@ -1101,7 +1101,6 @@ function сalculator() {
 
     // пересчёт и отправка
     function calculate() {
-        //removePrintClass()
         if(calculatorForm) {
             calculatorForm.classList.add('hiddenBlock')
         }
@@ -1246,6 +1245,8 @@ function сalculator() {
                     type: 'line',
                     data: energyСostsDiagram,
                     options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
@@ -1266,6 +1267,8 @@ function сalculator() {
                     type: 'bar',
                     data: energyProductionСostsDiagram,
                     options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
@@ -1580,7 +1583,7 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                                 <div class='finalTableFirstNameCol'>${item.name}</div>
                             `}
 
-                            ${item.years.map((innerItem, innerIndex) => {
+                            ${item.years.map((innerItem) => {
                                 return index < 4 ? `
                                     <div class='finalTableSecondCol'>
                                         ${Math.round(innerItem)
@@ -1627,7 +1630,7 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
             </div>
 
             <div class='diagramWrap'>
-                <canvas data-js="diagramBar"></canvas>
+                <canvas class="diagramCanvas" data-js="diagramBar"></canvas>
             </div>
 
             <div class='finalTitle'>Расчетные годовые показатели при годовой наработке 8000 рабочих часов</div>
@@ -1720,13 +1723,13 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                 }).join('')}
             </div>
             <div class='diagramWrap'>
-                <canvas data-js="diagramLine"></canvas>
+                <canvas class="diagramCanvas" data-js="diagramLine"></canvas>
             </div>
 
             <button
                 type="button"
                 class='calcBtn'
-                onclick='printResult'
+                onclick='printResult()'
             >
                 Распечатать рассчёт
             </button>`
@@ -1887,27 +1890,6 @@ const maintenance = {
 //печать страницы
 function printResult() {
     window.print()
-}
-
-function removePrintClass() {
-    const calculatorDeskBlock = document.querySelector(
-        '[data-framer-name="CalculatorDesktop"]'
-    )
-
-    if (calculatorDeskBlock) {
-        let classlistVal = calculatorDeskBlock.getAttribute("class")
-        let classListArr = classlistVal.split(" ")
-
-        let newClasslistVal = []
-
-        classListArr.forEach(function classEach(classItem) {
-            if (!classItem.startsWith("hidden")) {
-                newClasslistVal.push(classItem)
-            }
-        })
-
-        calculatorDeskBlock.setAttribute("class", newClasslistVal.join(" "))
-    }
 }
 
 //расчёт индексации тарифов
