@@ -1238,6 +1238,17 @@ function сalculator() {
         if(finalContainer) {
             finalContainer.innerHTML = finalData(finalCostTechChars, finalAnnualIndicators, costPriceData)
 
+            function innerTablesOptimization() {
+                const tables = document.querySelectorAll('[data-js="innerTable"]')
+
+                tables.forEach(table => {
+                    const td = table.closest('td')
+                    td.style.height = td.offsetHeight + 'px'
+                })
+            }
+
+            innerTablesOptimization()
+
             const lineDiagramCTX = finalContainer.querySelector('[data-js="diagramLine"]')
 
             if(lineDiagramCTX) {
@@ -1575,7 +1586,7 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                             ${index == 4 ? `
                                 <td style='${getStyle("finalTableFirstNameDivCol")}'>
                                     <table style="${getStyle('innerTable')}">
-                                        <tr>
+                                        <tr style="${getStyle('innerTableAdaptiveRow')}">
                                             <td style='${getStyle("finalTableFirstNameLeft")}'>${item.name}</td>
                                             <td style='${getStyle("finalTableFirstNameRight")}'>
                                                 ${(Math.round(item.sum * 100) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g," ") + " "}
@@ -1688,7 +1699,7 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                                                 ${dataItem.name}
                                             </td>
                                             <td style="${getStyle('finalTablePaybackCol2')}">
-                                                <table style="${getStyle('innerTable')}">
+                                                <table data-js="innerTable" style="${getStyle('innerTable')}">
                                                     <tr>
                                                         <td
                                                             style="${
@@ -1925,8 +1936,11 @@ const styles = {
 
     innerTable:`
         width: 100%;
+        height: 100%;
         padding: 0;
         border-collapse: collapse;`,
+
+    innerTableAdaptiveRow: '',
 
     finalTableRow:`
         box-sizing: border-box;
@@ -2025,6 +2039,7 @@ const styles = {
         padding: 0;`,
 
     finalTableFirstNameLeft:`
+        box-sizing: border-box;
         width: 60%;
         padding: 8px;
         display: flex;
@@ -2034,6 +2049,7 @@ const styles = {
         border-right: 1px solid #000;`,
 
     finalTableFirstNameRight:`
+        box-sizing: border-box;
         text-align: end;
         width: 40%;
         padding: 8px;`,
@@ -2067,6 +2083,10 @@ const mobStyles = {
 
         finalTable2:`
             font-size: 6px;`,
+
+        innerTableAdaptiveRow: `
+            display: block;
+            height: 100%;`,
 
         finalTableRow:`
             border-bottom: 0.5px solid #000;`,
@@ -2120,12 +2140,14 @@ const mobStyles = {
 
 
         finalTableFirstNameLeft:`
+            width: 100%;
             padding: 2px;
             text-align: left;
             border-right: 0 solid #000;
             border-bottom: 0.5px solid #000;`,
 
         finalTableFirstNameRight:`
+            width: 100%;
             padding: 2px;`,
 
         finalTableSecondCol:`
