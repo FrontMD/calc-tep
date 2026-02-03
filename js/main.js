@@ -1528,14 +1528,14 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                 Стоимость и основные технические характеристики
             </div>
 
-            <div class='finalTable'>
+            <table style="${getStyle('finalTable')}">
                 ${costTechChars.map((item, index) => {
                     return `
-                        <div class='finalTableRow'>
-                            <div class='finalTableCol1'>
+                        <tr style="${getStyle('finalTableRow')}">
+                            <td style="${getStyle('finalTableCol1')}">
                                 ${item.name}
-                            </div>
-                            <div class='finalTableCol2'>
+                            </td>
+                            <td style="${getStyle('finalTableCol2')}">
                                 <span>
                                     ${index !== 0
                                         ? item.value
@@ -1546,88 +1546,88 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                                             )
                                         : item.value}
                                 </span>
-                            </div>
-                        </div>`
+                            </td>
+                        </tr>`
                 }).join('')}
-            </div>
-            <div class="finalTable2">
-                <div class="finalTableHeaderRow">
-                    <div class="finalTableFirstCol">Операционные затраты (год)</div>
-                    <div class="finalTableSecondCol">1 год</div>
-                    <div class="finalTableSecondCol">2 год</div>
-                    <div class="finalTableSecondCol">3 год</div>
-                    <div class="finalTableSecondCol">4 год</div>
-                    <div class="finalTableSecondCol">5 год</div>
-                    <div class="finalTableSecondCol">6 год</div>
-                    <div class="finalTableSecondCol">7 год</div>
-                    <div class="finalTableSecondCol">8 год</div>
-                    <div class="finalTableSecondCol">ИТОГО</div>
-                </div>
+            </table>
+            <table style="${getStyle('finalTable2')}">
+                <tr style='${getStyle("finalTableHeaderRow")}'>
+                    <td style='${getStyle("finalTableFirstCol")}'>Операционные затраты (год)</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>1 год</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>2 год</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>3 год</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>4 год</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>5 год</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>6 год</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>7 год</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>8 год</td>
+                    <td style='${getStyle("finalTableSecondCol")}'>ИТОГО</td>
+                </tr>
                 ${costPriceData.map((item, index) => {
                     return `
-                        <div
-                            class=${
+                        <tr
+                            style="${
                                 index == costPriceData.length - 1
-                                    ? 'finalTableRow'
-                                    : 'finalTable2Row'
-                            }>
+                                    ? getStyle('finalTableRow')
+                                    : getStyle('finalTable2Row')
+                            }">
 
                             ${index == 4 ? `
-                                <div class="finalTableFirstNameDivCol">
-                                    <span class="finalTableFirstNameLeft">${item.name}</span>
-                                    <span class='finalTableFirstNameRight'>
+                                <td style='${getStyle("finalTableFirstNameDivCol")}'>
+                                    <span style='${getStyle("finalTableFirstNameLeft")}'>${item.name}</span>
+                                    <span style='${getStyle("finalTableFirstNameRight")}'>
                                         ${(Math.round(item.sum * 100) / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g," ") + " "}
                                     </span>
-                                </div>
+                                </td>
                             ` : `
-                                <div class='finalTableFirstNameCol'>${item.name}</div>
+                                <td style='${getStyle('finalTableFirstNameCol')}'>${item.name}</td>
                             `}
 
                             ${item.years.map((innerItem) => {
                                 return index < 4 ? `
-                                    <div class='finalTableSecondCol'>
+                                    <td style="${getStyle('finalTableSecondCol')}">
                                         ${Math.round(innerItem)
                                             .toString()
                                             .replace(
                                                 /\B(?=(\d{3})+(?!\d))/g,
                                                 " "
                                             ) + " "}
-                                    </div>
+                                    </td>
                                 ` : `
-                                    <div class='finalTableSecondCol'>
+                                    <td style="${getStyle('finalTableSecondCol')}">
                                         ${(Math.round(innerItem * 100) / 100)
                                             .toString()
                                             .replace(
                                                 /\B(?=(\d{3})+(?!\d))/g,
                                                 " "
                                             ) + " "}
-                                    </div>
+                                    </td>
                                 `
                             }).join('')}
 
                             ${index < 4 ? `
-                                <div class='finalTableSecondCol'>
+                                <td style="${getStyle('finalTableSecondCol')}">
                                     ${Math.round(item.sum)
                                         .toString()
                                         .replace(
                                             /\B(?=(\d{3})+(?!\d))/g,
                                             " "
                                         ) + " "}
-                                </div>
+                                </td>
                             ` : `
-                                <div class='finalTableSecondCol'>
+                                <td style="${getStyle('finalTableSecondCol')}">
                                     ${(Math.round(item.sum * 100) / 100)
                                         .toString()
                                         .replace(
                                             /\B(?=(\d{3})+(?!\d))/g,
                                             " "
                                         ) + " "}
-                                </div>
+                                </td>
                             `}
-                        </div>
+                        </tr>
                     `
                 }).join('')}
-            </div>
+            </table>
 
             <div class='diagramWrap'>
                 <canvas class="diagramCanvas" data-js="diagramBar"></canvas>
@@ -1635,23 +1635,23 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
 
             <div class='finalTitle'>Расчетные годовые показатели при годовой наработке 8000 рабочих часов</div>
 
-            <div className="finalTable" class='finalTable'>
+            <table style="${getStyle('finalTable')}">
                 ${annualIndicators.map((item) => {
                     if (item.id !== "Payback") {
                         return `
-                            <div class='finalTableBlock'>
-                                <div class='finalTableRow'>
-                                    <div class='finalTableTitleCol'>
+                            <tbody style="${getStyle('finalTableBlock')}">
+                                <tr style="${getStyle('finalTableRow')}">
+                                    <td style="${getStyle('finalTableTitleCol')}">
                                         ${item.name}
-                                    </div>
-                                </div>
+                                    </td>
+                                </tr>
                                 ${item.data.map((dataItem) => {
                                     return `
-                                        <div class='finalTableRow'>
-                                            <div class='finalTableLastCol1'>
+                                        <tr style="${getStyle('finalTableRow')}">
+                                            <td style="${getStyle('finalTableLastCol1')}">
                                                 ${dataItem.name}
-                                            </div>
-                                            <div class='finalTableLastCol2'>
+                                            </td>
+                                            <td style="${getStyle('finalTableLastCol2')}">
                                                 <span>
                                                     ${dataItem.value !== 0
                                                         ? Math.round(
@@ -1664,32 +1664,32 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                                                             )
                                                         : "-"}
                                                 </span>
-                                            </div>
-                                        </div>`
+                                            </td>
+                                        </tr>`
                                 }).join('')}
-                            </div>
+                            </tbody>
                         `
                     } else {
                         return `
-                            <div class='finalTableBlock'>
-                                <div class='finalTableRow'>
-                                    <div class='finalTableTitleCol'>
+                            <tbody style="${getStyle('finalTableBlock')}">
+                                <tr style="${getStyle('finalTableRow')}">
+                                    <td style="${getStyle('finalTableTitleCol')}">
                                         ${item.name}
-                                    </div>
-                                </div>
+                                    </td>
+                                </tr>
                                 ${item.data.map((dataItem, dataIndex) => {
                                     return `
-                                        <div class='finalTableRow'>
-                                            <div class='finalTableLastCol1'>
+                                        <tr style="${getStyle('finalTableRow')}">
+                                            <td style="${getStyle('finalTableLastCol1')}">
                                                 ${dataItem.name}
-                                            </div>
-                                            <div class='finalTablePaybackCol2'>
+                                            </td>
+                                            <td style="${getStyle('finalTablePaybackCol2')}">
                                                 <span
-                                                    class=${
+                                                    style="${
                                                         dataIndex == 0
-                                                            ? 'finalTablePaybackSubtitle'
-                                                            : 'finalTablePaybackValue'
-                                                    }
+                                                            ? getStyle('finalTablePaybackSubtitle')
+                                                            : getStyle('finalTablePaybackValue')
+                                                    }"
                                                 >
                                                     ${dataItem.value1
                                                         .toString()
@@ -1700,11 +1700,11 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                                                 </span>
 
                                                 <span
-                                                    class=${
+                                                    style="${
                                                         dataIndex == 0
-                                                            ? 'finalTablePaybackSubtitle'
-                                                            : 'finalTablePaybackValue'
-                                                    }
+                                                            ? getStyle('finalTablePaybackSubtitle')
+                                                            : getStyle('finalTablePaybackValue')
+                                                    }"
                                                 >
                                                     ${dataItem.value2
                                                         .toString()
@@ -1713,15 +1713,15 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                                                             " "
                                                         )}
                                                 </span>
-                                            </div>
-                                        </div>
+                                            </td>
+                                        </tr>
                                     `
                                 }).join('')}
-                            </div>
+                            </tbody>
                         `
                     }
                 }).join('')}
-            </div>
+            </table>
             <div class='diagramWrap'>
                 <canvas class="diagramCanvas" data-js="diagramLine"></canvas>
             </div>
@@ -1885,7 +1885,307 @@ const maintenance = {
     generator: [20000, 40000, 60000],
 }
 
+// Стили таблиц
+const styles = {
+        finalTable: `
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            line-height: 1.1em;
+            font-weight: 500;
+            background-color: #F6F6F6;
+            flex: 0 0 auto;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            border-right-width: 0;
+            border-bottom-width: 0;`,
+
+        finalTable2:`
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            line-height: 1.1em;
+            font-weight: 500;
+            background-color: #F6F6F6;
+            flex: 0 0 auto;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            border-right-width: 0;
+            border-bottom-width: 0;`,
+
+        finalTableRow:`
+            display: flex;
+            align-items: stretch;
+            box-sizing: border-box;
+            border-bottom: 1px solid #000;`,
+
+
+        finalTable2Row:`
+            display: flex;
+            align-items: stretch;
+            box-sizing: border-box;
+            border-bottom: 1px solid #000;`,
+
+        finalTableHeaderRow:`
+            display: flex;
+            align-items: stretch;
+            box-sizing: border-box;
+            font-weight: 700;
+            border-bottom: 1px solid #000;
+            text-align: center;`,
+
+        finalTableCol1:`
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 0 0 70%;
+            box-sizing: border-box;
+            min-height: 18px;
+            border-right: 1px solid #000;
+            padding: 8px 0 8px 8px;`,
+
+        finalTableCol2:`
+        display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1 0 30%;
+            box-sizing: border-box;
+            min-height: 18px;
+            text-align: end;
+            border-right: 1px solid #000;
+            padding: 8px 8px 8px 0;`,
+
+        finalTableLastCol1:`
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 0 0 50%;
+            box-sizing: border-box;
+            min-height: 18px;
+            border-right: 1px solid #000;
+            padding: 8px 0 8px 8px;`,
+
+        finalTableLastCol2:`
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1 0 50%;
+            box-sizing: border-box;
+            min-height: 18px;
+            text-align: end;
+            border-right: 1px solid #000;
+            padding: 8px 8px 8px 0;`,
+
+        finalTablePaybackCol2:`
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1 0 50%;
+            box-sizing: border-box;
+            min-height: 18px;
+            text-align: end;`,
+
+        finalTablePaybackSubtitle:`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 1 50%;
+            box-sizing: border-box;
+            text-align: center;
+            min-height: 18px;
+            border-right: 1px solid #000;
+            padding: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            height: 100%;`,
+
+        finalTablePaybackValue:`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 1 50%;
+            box-sizing: border-box;
+            min-height: 18px;
+            text-align: end;
+            border-right: 1px solid #000;
+            padding: 8px;
+            height: 100%;`,
+
+        finalTableFirstCol:`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 20%;
+            box-sizing: border-box;
+            min-height: 18px;
+            border-right: 1px solid #000;
+            padding: 8px 0;`,
+
+
+        finalTableFirstNameCol:`
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex: 0 0 20%;
+            box-sizing: border-box;
+            min-height: 18px;
+            border-right: 1px solid #000;
+            padding: 8px;`,
+
+
+        finalTableFirstNameDivCol:`
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            flex: 0 0 20%;
+            box-sizing: border-box;
+            min-height: 18px;
+            border-right: 1px solid #000;`,
+
+        finalTableFirstNameLeft:`
+            flex: 0 1 60%;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-right: 1px solid #000;`,
+
+        finalTableFirstNameRight:`
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 0 1 40%;
+            padding: 8px;`,
+
+        finalTableSecondCol:`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-shrink: 1;
+            flex-grow: 1;
+            flex-basis: calc(80% / 9);
+            box-sizing: border-box;
+            min-height: 18px;
+            border-right: 1px solid #000;
+            padding: 8px 0;`,
+
+        finalTableBlock:`
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;`,
+
+        finalTableTitleCol: `
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 100%;
+            box-sizing: border-box;
+            font-weight: 700;
+            padding: 8px 0;
+            border-right: 1px solid #000;`,
+    }
+
+// Адаптив таблиц
+const mobStyles = {
+        finalTable:`
+            font-size: 10px;`,
+
+        finalTable2:`
+            font-size: 6px;`,
+
+        finalTableRow:`
+            border-bottom: 0.5px solid #000;`,
+
+        finalTable2Row:`
+            border-bottom: 0.5px solid #000;`,
+
+        finalTableHeaderRow:`
+            border-bottom: 0.5px solid #000;`,
+
+        finalTableCol1:`
+            border-right: 0.5px solid #000;
+            padding: 2px 0 2px 2px;`,
+
+        finalTableCol2:`
+            border-right: 0.5px solid #000;
+            padding: 2px 2px 2px 0;`,
+
+        finalTableLastCol1:`
+            flex: 0 0 35%;
+            border-right: 0.5px solid #000;
+            padding: 2px 0 2px 2px;`,
+
+        finalTableLastCol2:`
+            flex: 1 0 65%;
+            border-right: 0.5px solid #000;
+            padding: 2px 2px 2px 0;`,
+
+        finalTablePaybackSubtitle:`
+            border-right: 0.5px solid #000;
+            padding: 2px;
+            font-size: 10px;`,
+
+        finalTablePaybackValue:`
+            border-right: 0.5px solid #000;
+            padding: 2px;`,
+
+        finalTableFirstCol:`
+            flex: 0 0 17%;
+            border-right: 0.5px solid #000;
+            padding: 2px 0;`,
+
+        finalTableFirstNameCol:`
+            flex: 0 0 17%;
+            border-right: 0.5px solid #000;
+            padding: 2px;`,
+
+        finalTableFirstNameDivCol:`
+            flex-direction: column;
+            flex: 0 0 17%;
+            border-right: 0.5px solid #000;`,
+
+
+        finalTableFirstNameLeft:`
+            flex: 0 1 auto;
+            padding: 2px;
+            text-align: left;
+            border-right: 0 solid #000;
+            border-bottom: 0.5px solid #000;`,
+
+        finalTableFirstNameRight:`
+            padding: 2px;`,
+
+        finalTableSecondCol:`
+            flex-basis: calc(83% / 9);
+            border-right: 0.5px solid #000;
+            padding: 2px;`,
+
+        finalTableTitleCol:`
+            padding: 2px 0;
+            border-right: 0.5px solid #000;`,
+}
+
 /**********Вспомогательные функции ****/
+
+// получение стилей для элемента
+function getStyle(elName) {
+    let ww = window.innerWidth
+    let bp = 768
+    
+    if(ww < bp && mobStyles[elName]) {
+        return styles[elName].concat(mobStyles[elName]);
+    } else {
+        return styles[elName];
+    }   
+}
 
 //печать страницы
 function printResult() {
