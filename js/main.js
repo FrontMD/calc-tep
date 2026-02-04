@@ -1,6 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-    сalculator()
+    сalculator();
+    textSpoilersInit();
 })
+
+function textSpoilersInit() {
+    const spoilers = document.querySelectorAll('[data-js="textSpoiler"]')
+
+    if(spoilers.length < 1) return
+
+    spoilers.forEach(spoiler => {
+        const content = spoiler.querySelector('[data-js="textSpoilerContent"]')
+
+        if(content) {
+            const firstP = content.querySelector('p')
+            let fullHeight = content.scrollHeight
+            let minHeight = 112
+    
+            if(firstP) {
+                minHeight = firstP.offsetHeight
+            }
+
+            content.style.maxHeight = minHeight + 'px'
+
+            setInterval(() => {
+                content.style.transition = 'max-height 0.4s linear'
+            }, 0)
+
+            if(fullHeight > minHeight) {
+                const btn = document.createElement('div')
+                btn.classList.add('text-spoiler__btn')
+                btn.innerHTML = '<span class="tsb-show">Подробнее</span><span class="tsb-hide">Свернуть</span>'
+                spoiler.appendChild(btn)
+
+                btn.addEventListener('click', function() {
+                    if(spoiler.classList.contains('expanded')) {
+                        spoiler.classList.remove('expanded')
+                        content.style.maxHeight = minHeight + 'px'
+                    } else {
+                        spoiler.classList.add('expanded')
+                        content.style.maxHeight = fullHeight + 'px'
+                    }
+                })
+            }
+        }
+
+    })
+}
 
 function сalculator() {
     /* Находим главный элемент, если его нет, то return */
@@ -2042,10 +2087,7 @@ const styles = {
         box-sizing: border-box;
         width: 60%;
         padding: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        text-align: start;
         border-right: 1px solid #000;`,
 
     finalTableFirstNameRight:`
@@ -2140,15 +2182,17 @@ const mobStyles = {
 
 
         finalTableFirstNameLeft:`
+            display: block;
             width: 100%;
             padding: 2px;
-            text-align: left;
             border-right: 0 solid #000;
             border-bottom: 0.5px solid #000;`,
 
         finalTableFirstNameRight:`
+            display: block;
             width: 100%;
-            padding: 2px;`,
+            padding: 2px;
+            text-align: start`,
 
         finalTableSecondCol:`
             width: 9.22%;

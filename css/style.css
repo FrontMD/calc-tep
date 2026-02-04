@@ -1,28 +1,14 @@
 /* Контейнеры */
-.container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 30px;
-    box-sizing: border-box;
-}
-
-@media (max-width: 767px) {
-    .container {
-        padding: 0 20px;
-    }
-}
 
 .calculator {
-    max-width: 1170px;
-    padding: 0 0 70px;
+    padding: 70px 0;
     box-sizing: border-box;
     background-color: white;
 }
 
 @media (max-width: 767px) {
     .calculator {
-        max-width: 770px;
-        padding: 0 0 50px;
+        padding: 50px 0;
     }
 }
 
@@ -33,6 +19,7 @@
     flex-direction: column;
     gap: 48px;
     color: #000;
+    max-width: 1140px;
 }
 
 @media (max-width: 767px) {
@@ -76,7 +63,6 @@
 
 /* формы и поля */
 .calculatorForm {
-    margin-top: 50px;
     max-width: 938px;
     display: flex;
     flex-direction: column;
@@ -553,3 +539,103 @@ input.hideRadioInput:checked~.radioName {
 }
 
 @media print and (max-width: 699px) {}
+
+
+/*заголовок и текст*/
+.head__1.fsz-52 {
+    font-size: 52px;
+}
+
+@media (max-width: 1199px) {
+    .head__1.fsz-52 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 809px) {
+    .head__1.fsz-52 {
+        font-size: 36px;
+    }
+}
+
+.s-whero__text.fsz-16 {
+    font-size: 16px;
+    max-width: 750px;
+}
+
+@media (max-width: 1199px) {
+    .s-whero__text.fsz-16 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 809px) {
+    .s-whero__text.fsz-16 {
+        font-size: 14px;
+    }
+}
+
+.s-whero__text.fsz-16 p {
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+.s-whero__text.fsz-16 p+p {
+    margin-top: 1em;
+}
+
+.text-spoiler .text-spoiler__content {
+    overflow: hidden;
+    max-height: 112px;
+}
+
+@media (max-width: 809px) {
+    .text-spoiler .text-spoiler__content {
+        max-height: 98px;
+    }
+}
+
+@media (max-width: 650px) {
+    .text-spoiler .text-spoiler__content {
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 550px) {
+    .text-spoiler .text-spoiler__content {
+        max-height: 177px;
+    }
+}
+
+@media (max-width: 400px) {
+    .text-spoiler .text-spoiler__content {
+        max-height: 216px;
+    }
+}
+
+
+.text-spoiler .text-spoiler__btn {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgb(0, 142, 207);
+    margin-top: 12px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.text-spoiler .tsb-show {
+    display: block;
+}
+
+.text-spoiler .tsb-hide {
+    display: none;
+}
+
+.text-spoiler.expanded .tsb-show {
+    display: none;
+}
+
+.text-spoiler.expanded .tsb-hide {
+    display: block;
+}
