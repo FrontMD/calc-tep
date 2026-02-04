@@ -1539,7 +1539,7 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                 Стоимость и основные технические характеристики
             </div>
 
-            <table style="${getStyle('finalTable')}">
+            <table style="${getStyle('finalTable')}" data-js="finalTable1">
                 ${costTechChars.map((item, index) => {
                     return `
                         <tr style="${getStyle('finalTableRow')}">
@@ -1561,7 +1561,7 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
                         </tr>`
                 }).join('')}
             </table>
-            <table style="${getStyle('finalTable2')}">
+            <table style="${getStyle('finalTable2')}" data-js="finalTable2">
                 <tr style='${getStyle("finalTableHeaderRow")}'>
                     <td style='${getStyle("finalTableFirstCol")}'>Операционные затраты (год)</td>
                     <td style='${getStyle("finalTableSecondCol")}'>1 год</td>
@@ -1650,7 +1650,7 @@ function finalData(costTechChars, annualIndicators, costPriceData) {
 
             <div class='finalTitle'>Расчетные годовые показатели при годовой наработке 8000 рабочих часов</div>
 
-            <table style="${getStyle('finalTable')}">
+            <table style="${getStyle('finalTable')}" data-js="finalTable3">
                 ${annualIndicators.map((item) => {
                     if (item.id !== "Payback") {
                         return `
