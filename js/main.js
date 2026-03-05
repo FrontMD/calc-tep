@@ -1134,7 +1134,7 @@ function сalculator() {
                 userNameField.classList.contains('error') ||
                 companyNameField.classList.contains('error') ||
                 userPhoneField.classList.contains('error') ||
-                userPhoneField.classList.contains('error') ||
+                userEmailField.classList.contains('error') ||
                 !privacyCheckboxValidate()
             ) {
                 console.log("ошибка в данных формы")
