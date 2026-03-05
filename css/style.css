@@ -504,6 +504,21 @@ input.hideRadioInput:checked~.radioName {
     display: none !important;
 }
 
+@media print {
+
+    @media print {
+
+        header+._white-bg,
+        .s-whero-3:has(+ .calculator),
+        section.calculator~footer,
+        section.calculator~section,
+        section.calculator~div {
+            display: none;
+        }
+
+    }
+}
+
 @media print and (min-width: 700px) {
     .finalContainer {
         gap: 50px !important;

@@ -40,3 +40,47 @@ section {
     line-height: 1.4;
     color: #1c1c1c;
 }
+
+.opport__btn {
+    background: white;
+    gap: 37px;
+}
+
+.btn {
+    border-radius: 64px;
+    height: 96px;
+    display: inline-flex;
+    font-weight: 500;
+    font-size: 24px;
+    color: #1c1c1c;
+    align-items: center;
+    padding-left: 32px;
+    padding-right: 23px;
+    white-space: nowrap;
+    gap: 60px;
+}
+
+.btn,
+.btn-o,
+*[class$="__btn"] {
+    transition: 0.5s;
+}
+
+.btn span {
+    flex: none;
+    width: 44px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    background: url(../img/arr-group.svg) no-repeat center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.btn span i {
+    transition: 0.5s;
+    flex: none;
+    width: 100%;
+    height: 24px;
+    background: url(../img/arr-wh.svg) no-repeat center;
+}
